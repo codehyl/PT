@@ -169,7 +169,7 @@ function ipv4_to_compact($ip, $port)
 
 function check_client($peer_id, $agent, &$agent_familyid)
 {
-	global $BASEURL, $Cache;
+/*	global $BASEURL, $Cache;
 
 	if (!$clients = $Cache->get_value('allowed_client_list')){
 		$clients = array();
@@ -337,5 +337,7 @@ function check_client($peer_id, $agent, &$agent_familyid)
 		else
 		return "Banned Client, Please goto $BASEURL/faq.php#id29 for a list of acceptable clients";
 	}
+*/
+return false;
 }
 ?>
