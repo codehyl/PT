@@ -1362,7 +1362,7 @@ function sent_mail($to,$fromname,$fromemail,$subject,$body,$type = "confirmation
 	elseif ($smtptype == 'external') {
 		require_once ($rootpath . 'include/smtp/smtp.lib.php');
 		$mail = new smtp($hdr_encoding,'eYou');
-		$mail->debug(false);
+		$mail->debug(true);
 		$mail->open($smtpaddress, $smtpport);
 		$mail->auth($accountname, $accountpassword);
 		//	$mail->bcc($multiplemail);
