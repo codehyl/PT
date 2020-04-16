@@ -4,7 +4,7 @@ $mail = new Mailer();
 $mail->Smtp('smtp.exmail.qq.com',465,'ssl','system@beitai.pt','Sxkm@2020');
 $mail->addTo('zc@cz9.cn');
 $mail->Subject('注册成功！');
-if (SMTPFORM)$mail->From(SMTPFORM[0], SMTPFORM[1]);
+if (SMTPFORM)$mail->From('system@beitai.pt', '备胎');
 $mail->Body("<h3>检验电子邮件系统正常情况</h3>
         测试电子邮件系统是否正常发信。<br>
         收到请回复，本操作很重要！<br>
