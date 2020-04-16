@@ -1379,8 +1379,9 @@ function sent_mail($to,$fromname,$fromemail,$subject,$body,$type = "confirmation
 		$mail->mime_charset('text/html', $hdr_encoding);
 		$mail->subject($subject);
 		$mail->body($body);
-		$mail->send() or stderr($lang_functions['std_error'], $lang_functions['text_unable_to_send_mail']);
+		$mail->send();// or stderr($lang_functions['std_error'], $lang_functions['text_unable_to_send_mail']);
 		$mail->close();
+		exit;
 	}
 	if ($showmsg) {
 		if ($type == "confirmation")
