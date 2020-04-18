@@ -3220,11 +3220,11 @@ while ($row = mysql_fetch_assoc($res))
             $Cache->cache_value('progress_A'.$CURUSER['id'].'_' .$row['id'], $sestatus, 600);
         }
         if ($progr>=100){
-            if ($sestatus=='Seeding') printf('<td bgcolor="#FFCC00" align="center"><font color="#FF0066"><b>%u%% <br> Seeding </b></font></td>',$progr);
-            elseif($sestatus=='Noseed') printf('<td bgcolor="#d0d0d0" align="center"><b>%u%% <br> Noseed </b></td>',$progr);
-            else printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> Leeching </b></font></td>',$progr);
-        }elseif($sestatus=='Leeching') printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> Leeching </b></font></td>',$progr);
-        elseif($sestatus=='Seeding') printf('<td bgcolor="#FFCC00" align="center"><font color="#FF0066"><b>%u%% <br> Seeding </b></font></td>',$progr);
+            if ($sestatus=='Seeding') printf('<td bgcolor="#bce672" align="center"><font color="#FF0066"><b>%u%% <br> 做种中 </b></font></td>',$progr);
+            elseif($sestatus=='Noseed') printf('<td bgcolor="#d0d0d0" align="center"><b>%u%% <br> 未做种 </b></td>',$progr);
+            else printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> 下载中 </b></font></td>',$progr);
+        }elseif($sestatus=='Leeching') printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> 下载中 </b></font></td>',$progr);
+        elseif($sestatus=='Seeding') printf('<td bgcolor="#bce672" align="center"><font color="#FF0066"><b>%u%% <br> 做种中 </b></font></td>',$progr);
         else echo '<td align="center">-</td>';
         //printf('<td>%u%%</td>', (1 - $mysnatched[$row['id']] / $row['size']) * 100);
     }else{
