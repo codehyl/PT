@@ -848,6 +848,15 @@ if ($count)
 	//echo $addparam;
 
 	list($pagertop, $pagerbottom, $limit) = pager($torrentsperpage, $count, "?" . $addparam);
+
+    $self_snatched_data_cache = 'self_snatched_data_'.$CURUSER['id'];
+    if(!$self_snatched_data = $Cache->get_value($self_snatched_data_cache)){
+        $res = sql_query('SELECT `torrentid`, `to_go` FROM `snatched` WHERE `userid` = '.$CURUSER['id']) or sqlerr(__FILE__,__LINE__);
+        $self_snatched_data = array();
+        while($row = mysql_fetch_row($res)) $self_snatched_data[$row[0]] = $row[1];
+        $Cache->cache_value($self_snatched_data_cache,$self_snatched_data,300);
+    }
+
 if ($allsec == 1 || $enablespecial != 'yes'){
 	$query = "SELECT torrents.id, torrents.sp_state, torrents.promotion_time_type, torrents.promotion_until, torrents.banned, torrents.picktype, torrents.pos_state, torrents.category, torrents.source, torrents.medium, torrents.codec, torrents.standard, torrents.processing, torrents.team, torrents.audiocodec, torrents.leechers, torrents.seeders, torrents.name, torrents.small_descr, torrents.times_completed, torrents.size, torrents.added, torrents.comments,torrents.anonymous,torrents.owner,torrents.url,torrents.cache_stamp FROM torrents ".($search_area == 3 || $column == "owner" ? "LEFT JOIN users ON torrents.owner = users.id " : "")." $where $orderby $limit";
 }
@@ -1075,10 +1084,10 @@ elseif($inclbookmarked == 2)
 if ($count) {
 	print($pagertop);
 	if ($sectiontype == $browsecatmode)
-		torrenttable($res, "torrents");
+		torrenttable($res, "torrents",$self_snatched_data);
 	elseif ($sectiontype == $specialcatmode) 
-		torrenttable($res, "music");
-	else torrenttable($res, "bookmarks");
+		torrenttable($res, "music",$self_snatched_data);
+	else torrenttable($res, "bookmarks",$self_snatched_data);
 	print($pagerbottom);
 }
 else {

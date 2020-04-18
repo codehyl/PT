@@ -2912,7 +2912,7 @@ function get_torrent_bookmark_state($userid, $torrentid, $text = false)
 	return $act;
 }
 
-function torrenttable($res, $variant = "torrent") {
+function torrenttable($res, $variant = "torrent",$mysnatched = array()) {
 	global $Cache;
 	global $lang_functions;
 	global $CURUSER, $waitsystem;
@@ -2999,6 +2999,7 @@ if ($CURUSER['showcomnum'] != 'no') { ?>
 <td class="colhead"><a href="?<?php echo $oldlink?>sort=7&amp;type=<?php echo $link[7]?>"><img class="seeders" src="pic/trans.gif" alt="seeders" title="<?php echo $lang_functions['title_number_of_seeders'] ?>" /></a></td>
 <td class="colhead"><a href="?<?php echo $oldlink?>sort=8&amp;type=<?php echo $link[8]?>"><img class="leechers" src="pic/trans.gif" alt="leechers" title="<?php echo $lang_functions['title_number_of_leechers'] ?>" /></a></td>
 <td class="colhead"><a href="?<?php echo $oldlink?>sort=6&amp;type=<?php echo $link[6]?>"><img class="snatched" src="pic/trans.gif" alt="snatched" title="<?php echo $lang_functions['title_number_of_snatched']?>" /></a></td>
+<td class="colhead">进度</td>
 <td class="colhead"><a href="?<?php echo $oldlink?>sort=9&amp;type=<?php echo $link[9]?>"><?php echo $lang_functions['col_uploader']?></a></td>
 <?php
 if (get_user_class() >= $torrentmanage_class) { ?>
@@ -3207,6 +3208,28 @@ while ($row = mysql_fetch_assoc($res))
 	print("<td class=\"rowfollow\"><a href=\"viewsnatches.php?id=".$row[id]."\"><b>" . number_format($row["times_completed"]) . "</b></a></td>\n");
 	else
 	print("<td class=\"rowfollow\">" . number_format($row["times_completed"]) . "</td>\n");
+
+    if(isset($mysnatched[$row['id']])){ // progress
+        $progr=(1 - $mysnatched[$row['id']] / $row['size']) * 100;
+        if (!$sestatus = $Cache->get_value('progress_A_'.$CURUSER['id'].'_' .$row['id'])) {
+            $r = sql_query("SELECT id,seeder FROM peers WHERE torrent = " . $id . " and userid=" . sqlesc($CURUSER["id"])) or die(mysql_error());
+            $fh= mysql_fetch_row($r);
+            if ($fh[1] == 'yes') $sestatus='Seeding';
+            elseif (!$fh[1]) $sestatus='Noseed';
+            else $sestatus='Leeching';
+            $Cache->cache_value('progress_A'.$CURUSER['id'].'_' .$row['id'], $sestatus, 600);
+        }
+        if ($progr>=100){
+            if ($sestatus=='Seeding') printf('<td bgcolor="#FFCC00" align="center"><font color="#FF0066"><b>%u%% <br> Seeding </b></font></td>',$progr);
+            elseif($sestatus=='Noseed') printf('<td bgcolor="#d0d0d0" align="center"><b>%u%% <br> Noseed </b></td>',$progr);
+            else printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> Leeching </b></font></td>',$progr);
+        }elseif($sestatus=='Leeching') printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> Leeching </b></font></td>',$progr);
+        elseif($sestatus=='Seeding') printf('<td bgcolor="#FFCC00" align="center"><font color="#FF0066"><b>%u%% <br> Seeding </b></font></td>',$progr);
+        else echo '<td align="center">-</td>';
+        //printf('<td>%u%%</td>', (1 - $mysnatched[$row['id']] / $row['size']) * 100);
+    }else{
+        echo '<td align="center">-</td>';
+    }
 
 		if ($row["anonymous"] == "yes" && get_user_class() >= $torrentmanage_class)
 		{
