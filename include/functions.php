@@ -3211,13 +3211,13 @@ while ($row = mysql_fetch_assoc($res))
 
     if(isset($mysnatched[$row['id']])){ // progress
         $progr=(1 - $mysnatched[$row['id']] / $row['size']) * 100;
-        if (!$sestatus = $Cache->get_value('progress_A_'.$CURUSER['id'].'_' .$row['id'])) {
+        if (!$sestatus = $Cache->get_value('progress_B_'.$CURUSER['id'].'_' .$row['id'])) {
             $r = sql_query("SELECT id,seeder FROM peers WHERE torrent = " . $id . " and userid=" . sqlesc($CURUSER["id"])) or die(mysql_error());
             $fh= mysql_fetch_row($r);
             if ($fh[1] == 'yes') $sestatus='Seeding';
             elseif (!$fh[1]) $sestatus='Noseed';
             else $sestatus='Leeching';
-            $Cache->cache_value('progress_A'.$CURUSER['id'].'_' .$row['id'], $sestatus, 600);
+            $Cache->cache_value('progress_B_'.$CURUSER['id'].'_' .$row['id'], $sestatus, 300);
         }
         if ($progr>=100){
             if ($sestatus=='Seeding') printf('<td bgcolor="#bce672" align="center"><font color="#FF0066"><b>%u%% <br> 做种中 </b></font></td>',$progr);
