@@ -3222,8 +3222,8 @@ while ($row = mysql_fetch_assoc($res))
         if ($progr>=100){
             if ($sestatus=='Seeding') printf('<td bgcolor="#bce672" align="center"><font color="#FF0066"><b>%u%% <br> 做种中 </b></font></td>',$progr);
             elseif($sestatus=='Noseed') printf('<td bgcolor="#d0d0d0" align="center"><b>%u%% <br> 未做种 </b></td>',$progr);
-            else printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> 下载中 </b></font></td>',$progr);
-        }elseif($sestatus=='Leeching') printf('<td bgcolor="#CC0066" align="center"><font color="#fff"><b>%u%% <br> 下载中 </b></font></td>',$progr);
+            else printf('<td bgcolor="#44cef6" align="center"><font color="#FF0066"><b>%u%% <br> 下载中 </b></font></td>',$progr);
+        }elseif($sestatus=='Leeching') printf('<td bgcolor="#44cef6" align="center"><font color="#FF0066"><b>%u%% <br> 下载中 </b></font></td>',$progr);
         elseif($sestatus=='Seeding') printf('<td bgcolor="#bce672" align="center"><font color="#FF0066"><b>%u%% <br> 做种中 </b></font></td>',$progr);
         else echo '<td align="center">-</td>';
         //printf('<td>%u%%</td>', (1 - $mysnatched[$row['id']] / $row['size']) * 100);
