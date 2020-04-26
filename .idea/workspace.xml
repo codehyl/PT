@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="834a5267-5eb2-40dd-b9dd-0dae011fb369" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1aXCF6BFjBHVCH2YhPoWJD8eKEA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="834a5267-5eb2-40dd-b9dd-0dae011fb369" name="Default Changelist" comment="" />
+      <created>1586872444614</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586872444614</updated>
+      <workItem from="1586872446242" duration="2721000" />
+      <workItem from="1586927562550" duration="2685000" />
+      <workItem from="1587006283466" duration="5020000" />
+      <workItem from="1587215726986" duration="3833000" />
+      <workItem from="1587235660735" duration="382000" />
+      <workItem from="1587293596511" duration="2000" />
+      <workItem from="1587381032396" duration="771000" />
+    </task>
+    <task id="LOCAL-00001" summary="email system debug">
+      <created>1587034354729</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587034354729</updated>
+    </task>
+    <task id="LOCAL-00002" summary="email system debug">
+      <created>1587034673596</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587034673596</updated>
+    </task>
+    <task id="LOCAL-00003" summary="email system debug">
+      <created>1587035204591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587035204591</updated>
+    </task>
+    <task id="LOCAL-00004" summary="email system debug">
+      <created>1587035359021</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587035359021</updated>
+    </task>
+    <task id="LOCAL-00005" summary="email system debug">
+      <created>1587035601010</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587035601010</updated>
+    </task>
+    <task id="LOCAL-00006" summary="email system fix">
+      <created>1587035788574</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587035788574</updated>
+    </task>
+    <task id="LOCAL-00007" summary="做种状态&amp;进度">
+      <created>1587216163793</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587216163793</updated>
+    </task>
+    <task id="LOCAL-00008" summary="做种状态&amp;进度">
+      <created>1587217053020</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1587217053020</updated>
+    </task>
+    <task id="LOCAL-00009" summary="做种状态&amp;进度">
+      <created>1587217278725</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1587217278725</updated>
+    </task>
+    <task id="LOCAL-00010" summary="做种状态&amp;进度">
+      <created>1587217600693</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587217600693</updated>
+    </task>
+    <task id="LOCAL-00011" summary="下载链接">
+      <created>1587217847929</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1587217847929</updated>
+    </task>
+    <task id="LOCAL-00012" summary="修改进度说明文字">
+      <created>1587381074916</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587381074916</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="email system debug" />
+    <MESSAGE value="email system fix" />
+    <MESSAGE value="做种状态&amp;进度" />
+    <MESSAGE value="下载链接" />
+    <MESSAGE value="修改进度说明文字" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改进度说明文字" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="560" y="114" key="CommitChangelistDialog2" timestamp="1587381072972">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="560" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1587381072972" />
+    <state x="636" y="253" width="647" height="534" key="find.popup" timestamp="1587216371497">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="253" width="647" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587216371497" />
+  </component>
+</project>
