@@ -8,7 +8,7 @@ stdhead('保种TOP');
 begin_main_frame('',true);
 ?>
 <div style="width: 100%">
-<h1 align="center">保种 TOP</h1>
+<h1 align="center">保种 TOP 100</h1>
 <div style="margin-top: 8px">
 <?php
 	print("<table border=\"1\" cellspacing=\"0\" cellpadding=\"5\" align=\"center\" width=100%><tr>");
