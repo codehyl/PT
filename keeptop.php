@@ -34,7 +34,7 @@ if (!$top100 = $Cache->get_value($key)) {
     sum(case when t2.team in (6) then 1 else 0 end)  as osl,
     sum(case when t2.team in (6) then t2.size else t2.size/4 end)  as csize,
     sum(case when t2.team in (6) then 1 else 0.25 end)  as csl
-    FROM `peers` as t1 left join torrents as t2 on t1.torrent=t2.id where t1.seeder='yes' group by t1.userid having csize order by csize desc limit ".($_REQUEST['limit']?intval($_REQUEST['limit']):100));
+    FROM `peers` as t1 left join torrents as t2 on t1.torrent=t2.id where t1.seeder='yes' group by t1.userid having $ord order by $ord desc limit $limit");
     while($rs=mysql_fetch_array($res,MYSQL_ASSOC)){
         $mytop[]=$rs;
     }
