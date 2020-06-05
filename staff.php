@@ -4,7 +4,7 @@ dbconn();
 require_once(get_langfile_path());
 loggedinorreturn(true);
 
-if(get_user_class() < UC_MODERATOR){
+if (get_user_class() < $staffmem_class){
     header('location:contactstaff.php');
     die;
 }
