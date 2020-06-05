@@ -3,6 +3,12 @@ require "include/bittorrent.php";
 dbconn();
 require_once(get_langfile_path());
 loggedinorreturn(true);
+
+if(get_user_class() < UC_MODERATOR){
+    header('location:contactstaff.php');
+    die;
+}
+
 stdhead($lang_staff['head_staff']);
 
 $Cache->new_page('staff_page', 900, true);
